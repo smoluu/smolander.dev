@@ -1,0 +1,15 @@
+services:
+  nginx-react:
+    container_name: ngixreact_smolander_dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "82:80"
+networks:
+  default:
+    external: true
+    name: custom
+# docker compose up
+# docker compose build
