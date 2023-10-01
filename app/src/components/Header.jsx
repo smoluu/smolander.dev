@@ -1,7 +1,15 @@
 import { NavLink } from "react-router-dom";
 import { ReactComponent as LOGO } from "../images/nnneon.svg";
+import { ReactComponent as LOGO_GITHUB } from "../images/github-mark-white.svg";
+import { ReactComponent as LOGO_LINKEDIN } from "../images/linkedin.svg";
 const Header = () => {
-  return (
+  return ( <>
+    <div className="sidebar">
+      <nav className="sidebarlinks">
+        <a href={"https://github.com/smoluu"} target="_blank" rel="noreferrer"><LOGO_GITHUB /> </a>
+        <a href={"https://www.linkedin.com/in/santeri-smolander-186292294/"} target="_blank" rel="noreferrer"><LOGO_LINKEDIN /> </a>
+      </nav>
+    </div>
     <div className="wrapperDiv">
       <div className="header">
         <div className="logo">
@@ -28,7 +36,7 @@ const Header = () => {
         </nav>
       </div>
     </div>
-  )
+  </>)
 }
 
 export default Header
