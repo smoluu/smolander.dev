@@ -5,9 +5,14 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
+#root{height: 100%;}
+.App{ height: 100%; }
+html { height:100%; min-width: none; }
 :root{
- --header-size: 80px
+ --header-size: 80px;
+ --bg-color: #101010;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -41,7 +46,7 @@ header {
   display: flex;
   justify-content: right;
   position: absolute;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--bg-color);
   width: 100%;
   z-index: 999;
   height: var(--header-size);
@@ -62,13 +67,13 @@ header {
   text-underline-offset: 10px;
 }
 .wrapperDiv{
-  height: var(--header-size);
+  /*height: var(--header-size);*/
 
 }
 .sidebar{
   position: absolute;
   display: flex;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--bg-color);
   z-index: 999;
   height: 100%;
   align-items: flex-end;
@@ -94,23 +99,37 @@ header {
 /*---------HOME------------ */
 .container{
   display: flex;
-  flex-direction: column;
-  width: 60%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  flex-wrap: nowrap;
   
 }
+
 .home{
-  align-self: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
   padding: 0;
+  font-size: 2vw;
   height: 100%;
-  font-size: 150%;
-  width: fit-content;
+  min-width: 300px;
 }
 .image{
-  
+  height: 100%;
+}
+.image img{
+  height: 80vh;
+  width: fit-content;
+  filter: opacity(50%) grayscale(100);
 }
 /*--------VISIBLE PAGE CONTENT---------- */
 .content{
-  background-color: black;
+  background-color: var(--bg-color);
   margin-left: var(--header-size);
-  border: solid 1px red;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: var(--header-size);
 }
