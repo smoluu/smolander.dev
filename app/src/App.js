@@ -1,26 +1,28 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Route, NavLink, Routes, HashRouter } from "react-router-dom";
+import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import './App.css';
 import Home from './components/Home';
 import Header from './components/Header';
 import About from './components/About'
 import Projects from './components/Projects';
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
-    <HashRouter>
+    
       <div className='App'>
-        <Header></Header>
+        <Header/>
         <div className="content">
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/About" element={<About />}></Route>
-            <Route exact path="/Projects" element={<Projects/>}></Route>
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route exact path="/" element={<Home />}></Route>
+              <Route exact path="/About" element={<About />}></Route>
+              <Route exact path="/Projects" element={<Projects />}></Route>
+            </Routes>
+          </AnimatePresence>
         </div>
       </div>
-    </HashRouter>
   );
 }
 export default App;

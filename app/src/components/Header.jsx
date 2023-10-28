@@ -10,7 +10,6 @@ const Header = () => {
         <a href={"https://www.linkedin.com/in/santeri-smolander-186292294/"} target="_blank" rel="noreferrer"><LOGO_LINKEDIN /> </a>
       </nav>
     </div>
-    <div className="wrapperDiv">
       <div className="header">
         <div className="logo">
           <NavLink to="/"
@@ -35,7 +34,6 @@ const Header = () => {
           </NavLink>
         </nav>
       </div>
-    </div>
   </>)
 }
 

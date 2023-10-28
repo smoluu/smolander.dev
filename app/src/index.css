@@ -1,22 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 body {
   color: white;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Ubuntu";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  overflow: hidden;
 }
 #root{height: 100%;}
 .App{ height: 100%; }
-html { height:100%; min-width: none; }
+html{
+   height:100%;
+   min-height: 100%;
+}
 :root{
  --header-size: 80px;
  --bg-color: #101010;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 /*------- header --------*/
 header {
@@ -66,10 +65,10 @@ header {
   text-decoration: underline;
   text-underline-offset: 10px;
 }
-.wrapperDiv{
-  /*height: var(--header-size);*/
-
+.wrapperdiv{
+  height: var(--header-size);
 }
+
 .sidebar{
   position: absolute;
   display: flex;
@@ -97,39 +96,37 @@ header {
   filter: invert(48%);
 }
 /*---------HOME------------ */
-.container{
+.home{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  height: 100%;
   width: 100%;
-  height: 100%;
-  flex-wrap: nowrap;
-  
 }
-
-.home{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: flex-start;
-  padding: 0;
+.home > .text{
+  margin: auto;
   font-size: 2vw;
-  height: 100%;
-  min-width: 300px;
 }
-.image{
-  height: 100%;
+.home .image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
-.image img{
-  height: 80vh;
-  width: fit-content;
+.home .image img{
+  height: 60vh;
   filter: opacity(50%) grayscale(100);
 }
 /*--------VISIBLE PAGE CONTENT---------- */
 .content{
+  display: flex;
   background-color: var(--bg-color);
   margin-left: var(--header-size);
   height: 100%;
   box-sizing: border-box;
   padding-top: var(--header-size);
+}
+.transition{
+  height: 100%;
+  width: 100%;
 }

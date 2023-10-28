@@ -1,14 +1,18 @@
+import Transition from "./Transition"
+
 const Projects = () => {
   return (
-    <div>
-      <h1>Projects</h1>
-      <p>this is the Projects page</p>
-      <p>this is the Projects page</p>
-      <p>this is the Projects page</p>
-      <p>this is the Projects page</p>
-      <p>this is the Projects page</p>
+    <Transition>
+      <div>
+        <h1>Projects</h1>
+        <p>this is the Projects page</p>
+        <p>this is the Projects page</p>
+        <p>this is the Projects page</p>
+        <p>this is the Projects page</p>
+        <p>this is the Projects page</p>
 
-    </div>
+      </div>
+    </Transition>
   )
 }
 
