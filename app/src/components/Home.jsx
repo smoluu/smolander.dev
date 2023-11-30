@@ -10,9 +10,6 @@ const Home = () => {
           <p>I'm a developer</p>
 
           </div>
-          <div className="image">
-          <img src={require("../images/me.png")} alt="me"></img>
-          </div>
         </div>
     </Transition>
   )

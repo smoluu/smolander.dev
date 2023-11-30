@@ -1,5 +1,4 @@
 # This Dockerfile builds the React front end for nginx.
-# It also proxies /api requests to api:5000
 
 # Build step #1: build the React front end
 FROM node:18.18.0-alpine as build-step
