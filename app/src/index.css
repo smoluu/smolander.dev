@@ -17,7 +17,7 @@ html {
   min-height: 100%;
 }
 :root {
-  --header-size: 7vh;
+  --header-size: 5vh;
   --bg-color: #101010;
 }
 /*------- header --------*/
