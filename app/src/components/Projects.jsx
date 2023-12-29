@@ -1,5 +1,5 @@
 import Transition from "./Transition"
-import { Link } from "react-router-dom";
+import { Link,Outlet } from "react-router-dom";
 import Placeholder from "../images/128x128_placeholder.png"
 
 const Projects = () => {
@@ -16,7 +16,8 @@ const Projects = () => {
               <div className="card-body">
                 <h5 className="card-title">1st project</h5>
                 <p className="card-text">This is the first project</p>
-                <Link to="/"><button className="btn btn-dark"> Look</button></Link>
+                <Link to="SpaceInvaders"><button className="btn btn-dark">Demo</button></Link>
+                <Link to="SpaceInvaders"><button className="btn btn-dark">Code</button></Link>
               </div>
             </div>
           </div>
@@ -77,6 +78,7 @@ const Projects = () => {
         </div>
 
 
+      <Outlet/>
       </div>
     </Transition>
   )
