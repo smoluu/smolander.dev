@@ -1,5 +1,4 @@
 import Transition from "./Transition"
-import Me from "../images/me.png"
 
 const Home = () => {
   return (
@@ -11,8 +10,8 @@ const Home = () => {
           <p style={{ color: "whitesmoke" }}>I'm a developer</p>
         </div>
         <div className="col-md-5 m-auto">
-        <picture className="">
-          <img src={Me} class="rounded img-fluid" alt="img"></img>
+        <picture className="picture">
+          <img src={window.location.origin + "/img/me.png"} className="rounded img-fluid" alt={"Me"}></img>
         </picture>
 
         </div>

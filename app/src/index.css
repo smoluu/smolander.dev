@@ -47,6 +47,7 @@ header {
 .navbar-container {
   display: flex;
   justify-content: right;
+  align-items: center;
   position: absolute;
   background-color: var(--bg-color);
   width: 100%;
@@ -100,9 +101,10 @@ header {
   }
 }
 .offcanvas {
+  background-color: black;
   display: flex;
   position: absolute;
-  width: 50% !important;
+  width: 33% !important;
   transition: all 1 linear;
   opacity: 1;
 }
@@ -149,15 +151,10 @@ header {
   margin: auto;
   font-size: 2vw;
 }
-.home .image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.picture img {
+  max-height: 1250px;
 }
-.home .image img {
-  height: 60vh;
-  filter: opacity(50%) grayscale(100);
-}
+
 /*--------VISIBLE PAGE CONTENT---------- */
 .content {
   display: flex;

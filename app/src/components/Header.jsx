@@ -10,7 +10,7 @@ const Header = () => {
   const [offcanvasShow, offcanvassetShow] = useState(false);
   const OffcanvasToggle = () => offcanvassetShow(!offcanvasShow);
   return (<>
-    <div className="sidebar">
+    <div className="sidebar" >
       <nav className="sidebarlinks">
         <a href={"https://github.com/smoluu"} target="_blank" rel="noreferrer"><LOGO_GITHUB /> </a>
         <a href={"https://www.linkedin.com/in/santeri-smolander-186292294/"} target="_blank" rel="noreferrer"><LOGO_LINKEDIN /> </a>
@@ -49,7 +49,7 @@ const Header = () => {
         </NavLink>
       </div>
 
-        <Offcanvas className={`offcanvas ${offcanvasShow ? "open" : ""}`} placement="end" show={offcanvasShow} onHide={OffcanvasToggle}>
+        <Offcanvas className={`text-bg-dark offcanvas ${offcanvasShow ? "open" : ""}`} placement="end" show={offcanvasShow} onHide={OffcanvasToggle}>
         <Offcanvas.Header closeButton closeVariant="white">
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
