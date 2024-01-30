@@ -16,25 +16,11 @@ const Projects = () => {
 
       <div className="container-fluid">
         {/* projects row */}
-        <div className="row mx-5">
+        <div className="row mx-4 gy-4">
 
           <h1 style={{ color: "whitesmoke" }}>Projects</h1>
-          <div className="col-md-3">
-            <Card data-bs-theme="dark">
-              <Card.Img src="https://via.placeholder.com/128x128" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
-                </Card.Text>
-                <Button variant="secondary">Select</Button>
-              </Card.Body>
-            </Card>
-          </div>
 
-          <div className="col-md-3">
-            <Card data-bs-theme="dark">
+            <Card className="col-sm-3" data-bs-theme="dark">
               <Card.Img src="https://via.placeholder.com/128x128" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -45,10 +31,8 @@ const Projects = () => {
                 <Button variant="secondary">Select</Button>
               </Card.Body>
             </Card>
-          </div>
 
-          <div className="col-md-3">
-            <Card data-bs-theme="dark">
+            <Card className="col-sm-3" data-bs-theme="dark">
               <Card.Img src="https://via.placeholder.com/128x128" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -59,10 +43,8 @@ const Projects = () => {
                 <Button variant="secondary">Select</Button>
               </Card.Body>
             </Card>
-          </div>
 
-          <div className="col-md-3">
-            <Card data-bs-theme="dark">
+            <Card className="col-sm-3" data-bs-theme="dark">
               <Card.Img src="https://via.placeholder.com/128x128" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -73,13 +55,24 @@ const Projects = () => {
                 <Button variant="secondary">Select</Button>
               </Card.Body>
             </Card>
-          </div>
+
+            <Card className="col-sm-3" data-bs-theme="dark">
+              <Card.Img src="https://via.placeholder.com/128x128" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the
+                  bulk of the card's content.
+                </Card.Text>
+                <Button variant="secondary">Select</Button>
+              </Card.Body>
+            </Card>
 
         </div>{/* /projects row */}
 
 
         {/* games row */}
-        <div className="row mx-5">
+        <div className="row p-4">
           <h1 style={{ color: "whitesmoke" }}>Games</h1>
 
           <Carousel
@@ -96,10 +89,10 @@ const Projects = () => {
                   <Card.Text>
                     Space Invaders is a classic arcade game where players control a spaceship, defending Earth against descending waves of alien invaders by shooting them down while avoiding their retaliatory fire.
                   </Card.Text>
-                  <Link to="/Projects/SpaceInvaders" className="btn btn-secondary px-5 mx-3" >
+                  <Link to="/Projects/SpaceInvaders" className="btn btn-secondary m-1" >
                     Demo
                   </Link>
-                  <Link to="" className="btn btn-secondary px-5 mx-3">
+                  <Link to="" className="btn btn-secondary m-1">
                     More info
                   </Link>
                 </Card.Body>
@@ -115,10 +108,10 @@ const Projects = () => {
                   <Card.Text>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint quidem, dolorum voluptatum beatae sequi repudiandae ipsa nam, est adipisci, ea expedita impedit exercitationem pariatur corporis atque facere ex mollitia ipsam.
                   </Card.Text>
-                  <Link to="" className="btn btn-secondary px-5 mx-3">
+                  <Link to="" className="btn btn-secondary m-1">
                     Demo
                   </Link>
-                  <Link to="" className="btn btn-secondary px-5 mx-3">
+                  <Link to="" className="btn btn-secondary m-1">
                     More info
                   </Link>
                 </Card.Body>
