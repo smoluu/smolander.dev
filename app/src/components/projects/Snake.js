@@ -4,10 +4,9 @@ import "../../css/snake.css";
 const Snake = () => {
   useEffect(() => {
     const gameArea = document.getElementById("gameArea");
-    const startButton = document.getElementById("startButton");
-    const snakeIndex = document.getElementById("snakeIndex");
     const snakeScore = document.getElementById("snakeScore");
     const touchControlArea = document.getElementById("touchControlArea")
+    const info = document.getElementById("info")
 
     const width = 20;
 
@@ -37,21 +36,18 @@ const Snake = () => {
 
     function startGame() {
       touchControlArea.removeEventListener("click", startGame);
-
       touchControlArea.removeEventListener("touchstart", startGame)
       touchControlArea.addEventListener("touchstart",handleTouch)
-
       interval = setInterval(move, intervalTime * speed);
       snake.forEach((index) => grid[index].classList.add("snake"));
+      info.innerHTML = "&nbsp;";
       spawnApple();
     }
 
     function move() {
-      console.log(interval)
-      snakeIndex.innerHTML = snake[0] + snakeDirection;
 
       //lose condition
-      
+
       if (
         snake[0] + snakeDirection < 0 ||
         snake[0] + snakeDirection > 399 ||
@@ -88,6 +84,7 @@ const Snake = () => {
       grid[tail].classList.remove("snake");
     }
 
+
     function spawnApple() {
       appleIndex = Math.floor(Math.random() * grid.length);
       while (grid[appleIndex].classList.contains("apple")) {
@@ -96,6 +93,7 @@ const Snake = () => {
       grid[appleIndex].classList.add("apple");
     }
 
+
     function playAudio(audio) {
       if (audio.paused) {
         audio.play();
@@ -103,6 +101,7 @@ const Snake = () => {
         audio.currentTime = 0;
       }
     }
+
 
     function handleMouseClick(e) {
       if (e.keyCode === 39) {
@@ -124,7 +123,6 @@ const Snake = () => {
 
     function handleTouch(e){
       e.preventDefault();
-      console.log(e.target.id)
       switch(e.target.id){
         case "top" : snakeDirection = - width; break;
         case "left" : snakeDirection = -1; break;
@@ -142,20 +140,16 @@ const Snake = () => {
 
   return (
     <div className="container-fluid d-flex">
-      <h1 id="snakeScore">Score 0</h1>
-      <div className="gameArea" id="gameArea">
-      </div>
         <div className="touchControlArea" id="touchControlArea">
           <div className="top" id="top"></div>
           <div className="left"id="left"></div>
           <div className="right"id="right"></div>
           <div className="bottom"id="bottom"></div>
         </div>
-      <button className="btn btn-success" id="startButton">
-        Start
-      </button>
-      <p id="snakedebug"></p>
-      <p id="snakeIndex"></p>
+      <h1 id="snakeScore">Score 0</h1>
+      <div className="gameArea" id="gameArea">
+      </div>
+      <p id="info">Press or touch to start game. Control with arrow keys or touch controls</p>
     </div>
   );
 };
