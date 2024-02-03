@@ -1,14 +1,14 @@
 # This Dockerfile builds the React front end for nginx.
 
 # Build step #1: build the React front end
-FROM node:18.18.0-alpine as build-step
+FROM node:20.11.0-alpine3.19 as build-step
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY /app/package.json /app/package-lock.json ./
 COPY ./app/src ./src
 COPY ./app/public ./public
-RUN yarn install
-RUN yarn build
+RUN npm install
+RUN npm run build
 
 # Build step #2: build an nginx container
 FROM nginx:stable-alpine

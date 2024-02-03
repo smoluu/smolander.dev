@@ -9,7 +9,7 @@ services:
       - "82:80"
 networks:
   default:
-    external: true
+    external: false
     name: custom
-# docker compose up
 # docker compose build
+# docker compose up
