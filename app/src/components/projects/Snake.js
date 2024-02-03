@@ -5,13 +5,13 @@ const Snake = () => {
   useEffect(() => {
     const gameArea = document.getElementById("gameArea");
     const snakeScore = document.getElementById("snakeScore");
-    const touchControlArea = document.getElementById("touchControlArea")
-    const info = document.getElementById("info")
+    const touchControlArea = document.getElementById("touchControlArea");
+    const info = document.getElementById("info");
 
     const width = 20;
 
     // load audio
-    
+
     var soundEat = new Audio();
     var soundLose = new Audio();
     soundEat.src = window.location.origin + "/sounds/snake/eat.mp3";
@@ -36,8 +36,8 @@ const Snake = () => {
 
     function startGame() {
       touchControlArea.removeEventListener("click", startGame);
-      touchControlArea.removeEventListener("touchstart", startGame)
-      touchControlArea.addEventListener("touchstart",handleTouch)
+      touchControlArea.removeEventListener("touchstart", startGame);
+      touchControlArea.addEventListener("touchstart", handleTouch);
       interval = setInterval(move, intervalTime * speed);
       snake.forEach((index) => grid[index].classList.add("snake"));
       info.innerHTML = "&nbsp;";
@@ -45,7 +45,6 @@ const Snake = () => {
     }
 
     function move() {
-
       //lose condition
 
       if (
@@ -84,7 +83,6 @@ const Snake = () => {
       grid[tail].classList.remove("snake");
     }
 
-
     function spawnApple() {
       appleIndex = Math.floor(Math.random() * grid.length);
       while (grid[appleIndex].classList.contains("apple")) {
@@ -92,7 +90,6 @@ const Snake = () => {
       }
       grid[appleIndex].classList.add("apple");
     }
-
 
     function playAudio(audio) {
       if (audio.paused) {
@@ -102,53 +99,71 @@ const Snake = () => {
       }
     }
 
-
     function handleMouseClick(e) {
       if (e.keyCode === 39) {
-        snakeDirection = 1; //if we press the right arrow on our keyboard, the snake will go right one
+        snakeDirection = 1;           // right one
       } else if (e.keyCode === 38) {
-        snakeDirection = -width; // snake will go back {width} divs, appearing to go up
+        snakeDirection = -width;      // up width
       } else if (e.keyCode === 37) {
-        snakeDirection = -1; // if we press left, the snake will go left one div
+        snakeDirection = -1;          // left one
       } else if (e.keyCode === 40) {
-        snakeDirection = + width; //snake will go forward {width} divs, appearing to go down
+        snakeDirection = +width;      //down width
       }
 
-      if(e.keyCode === "Space" || interval === 0){
-        startGame()
+      if (e.keyCode === "Space" || interval === 0) {
+        startGame();
       }
     }
 
     //touch controls
 
-    function handleTouch(e){
+    function handleTouch(e) {
       e.preventDefault();
-      switch(e.target.id){
-        case "top" : snakeDirection = - width; break;
-        case "left" : snakeDirection = -1; break;
-        case "right" : snakeDirection = 1; break;
-        case "bottom" : snakeDirection = + width; break;
+      switch (e.target.id) {
+        case "top":
+          snakeDirection = -width;
+          break;
+        case "left":
+          snakeDirection = -1;
+          break;
+        case "right":
+          snakeDirection = 1;
+          break;
+        case "bottom":
+          snakeDirection = +width;
+          break;
         default:
           return;
       }
     }
-    
+
     document.addEventListener("keydown", handleMouseClick);
     touchControlArea.addEventListener("click", startGame);
-    touchControlArea.addEventListener("touchstart",startGame)
-  });
+    touchControlArea.addEventListener("touchstart", startGame);
+
+    // cleanup on component unmount
+
+    return() => {
+      if(interval !== 0){
+        clearInterval(interval);
+        console.log("cleared interval")
+      }
+    }
+
+
+  },[]); // /useEffect
+
 
   return (
     <div className="container-fluid d-flex">
-        <div className="touchControlArea" id="touchControlArea">
-          <div className="top" id="top"></div>
-          <div className="left"id="left"></div>
-          <div className="right"id="right"></div>
-          <div className="bottom"id="bottom"></div>
-        </div>
-      <h1 id="snakeScore">Score 0</h1>
-      <div className="gameArea" id="gameArea">
+      <div className="touchControlArea" id="touchControlArea">
+        <div className="top" id="top"></div>
+        <div className="left" id="left"></div>
+        <div className="right" id="right"></div>
+        <div className="bottom" id="bottom"></div>
       </div>
+      <h1 id="snakeScore">Score 0</h1>
+      <div className="gameArea" id="gameArea"></div>
       <p id="info">Press or touch to start game. Control with arrow keys or touch controls</p>
     </div>
   );
