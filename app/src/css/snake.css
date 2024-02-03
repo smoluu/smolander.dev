@@ -1,8 +1,7 @@
-.container-fluid{
+.container-fluid {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 .gameArea::before {
   content: "";
@@ -23,4 +22,34 @@
 }
 .apple {
   background-color: red;
+}
+.touchControlArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  box-sizing: border-box;
+}
+.top{
+  height: 25%;
+  width: 100%;
+  border: 1px solid red;
+}
+.left{
+  width: 50%;
+  height: 50%;
+  border: 1px solid red;
+}
+.right{
+  width: 50%;
+  height: 50%;
+  border: 1px solid red;
+}
+.bottom{
+  height: 25%;
+  width: 100%;
+  border: 1px solid red;
 }
