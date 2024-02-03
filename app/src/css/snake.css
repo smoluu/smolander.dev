@@ -1,0 +1,26 @@
+.container-fluid{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.gameArea::before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* This sets the aspect ratio (1:1) for height based on width */
+}
+.gameArea {
+  display: grid;
+  border-style: solid;
+  grid-template-columns: repeat(20, 1fr); /* 20 columns with equal width */
+  grid-template-rows: repeat(20, 1fr); /* 20 rows with equal height */
+  gap: 1px; /* Adjust the gap between cells as needed */
+  width: 100%;
+  max-width: 800px;
+}
+.snake {
+  background-color: greenyellow;
+}
+.apple {
+  background-color: red;
+}

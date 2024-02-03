@@ -6,6 +6,7 @@ import Header from './components/Header';
 import About from './components/About'
 import Projects from './components/Projects';
 import SpaceInvaders from "./components/projects/SpaceInvaders";
+import Snake from "./components/projects/Snake";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/About" element={<About />}></Route>
             <Route path="/Projects" element={<Projects />}></Route>
             <Route path="Projects/SpaceInvaders" element={<SpaceInvaders />}></Route>
+            <Route path="Projects/Snake" element={<Snake />}></Route>
             
           </Routes>
         </AnimatePresence>
