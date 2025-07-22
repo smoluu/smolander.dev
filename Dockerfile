@@ -1,7 +1,7 @@
 # This Dockerfile builds the React front end for nginx.
 
 # Build step #1: build the React front end
-FROM node:20.11.0-alpine3.19 as build-step
+FROM node:22.17.1-bullseye-slim AS build-step
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY /app/package.json /app/package-lock.json ./

@@ -1,6 +1,7 @@
 services:
   nginx-react:
-    container_name: ngixreact_smolander_dev
+    image: smoluu/smolander.dev
+    container_name: smolander-dev
     build:
       context: .
       dockerfile: Dockerfile
